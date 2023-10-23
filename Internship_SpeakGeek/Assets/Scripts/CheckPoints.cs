@@ -5,6 +5,7 @@ using UnityEngine;
 public class CheckPoints : MonoBehaviour
 {
     private GameManager gM;
+    private PlayerController pC;
     public ParticleSystem checkpointEffect;
     public float effectDuration = 2.0f;
     public float timer = 0.0f;
@@ -14,6 +15,7 @@ public class CheckPoints : MonoBehaviour
     private void Start()
     {
         gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        pC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -23,7 +25,16 @@ public class CheckPoints : MonoBehaviour
             gM.MostRecentCheck = transform.position; 
         }
 
-        if(!activated && other.CompareTag("Player"))
+        if (gameObject.name == "CheckPoint1")
+        {
+            
+            if (pC != null)
+            {
+                pC.canJump = true; 
+            }
+        }
+
+        if (!activated && other.CompareTag("Player"))
         {
             checkpointEffect.Play();
             activated = true;

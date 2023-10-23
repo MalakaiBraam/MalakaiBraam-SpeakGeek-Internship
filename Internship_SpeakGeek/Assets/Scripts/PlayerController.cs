@@ -12,6 +12,11 @@ public class PlayerController : MonoBehaviour
     public GameObject health2;
     public GameObject health3;
     public int health;
+    public bool canJump = false;
+    public float jumpForce = 5.0f;
+    private float lastJumpTime;
+    public float jumpCooldown = 2.0f;
+
     private void Start()
     {
         gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
@@ -50,6 +55,12 @@ public class PlayerController : MonoBehaviour
         {
             health3.SetActive(false);
             SceneManager.LoadScene(1);
+        }
+
+        if (canJump && Input.GetKeyDown(KeyCode.Space) && (Time.time - lastJumpTime) >= jumpCooldown)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            lastJumpTime = Time.time; 
         }
     }
 
