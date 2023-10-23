@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 332571589}
   - component: {fileID: 332571588}
   m_Layer: 0
-  m_Name: CheckPoint1 (1)
+  m_Name: Finish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,7 +347,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a43c0f7d26d9d7a4487fa0e9c9175f17, type: 2}
+  - {fileID: 2100000, guid: 1d5939a464acf6647805c9f9dbfaa20b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1168,6 +1168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MostRecentCheck: {x: 0, y: 0.7, z: -24}
+  allowRetry: 0
 --- !u!4 &788767329
 Transform:
   m_ObjectHideFlags: 0
@@ -12009,6 +12010,7 @@ MonoBehaviour:
   health: 0
   canJump: 0
   jumpForce: 50
+  jumpCooldown: 2
 --- !u!1 &1465244697
 GameObject:
   m_ObjectHideFlags: 0

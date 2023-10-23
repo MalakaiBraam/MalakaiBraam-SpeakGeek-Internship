@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CheckPoints : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CheckPoints : MonoBehaviour
     public float effectDuration = 2.0f;
     public float timer = 0.0f;
     public bool activated = false;
+    
 
 
     private void Start()
@@ -34,10 +36,19 @@ public class CheckPoints : MonoBehaviour
             }
         }
 
+        
+
         if (!activated && other.CompareTag("Player"))
         {
             checkpointEffect.Play();
             activated = true;
+        }
+
+        if (gameObject.name == "Finish")
+        {
+
+            SceneManager.LoadScene(3);
+            
         }
     }
 

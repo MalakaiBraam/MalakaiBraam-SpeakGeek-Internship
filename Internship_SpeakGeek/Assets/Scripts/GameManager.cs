@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     public Vector3 MostRecentCheck;
 
+
     private void Awake()
     {
         if(instance == null)
@@ -19,4 +20,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
 }

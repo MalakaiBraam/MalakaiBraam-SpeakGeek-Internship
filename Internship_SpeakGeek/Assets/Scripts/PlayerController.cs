@@ -54,7 +54,8 @@ public class PlayerController : MonoBehaviour
         else if (health == 0)
         {
             health3.SetActive(false);
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
+            
         }
 
         if (canJump && Input.GetKeyDown(KeyCode.Space) && (Time.time - lastJumpTime) >= jumpCooldown)
