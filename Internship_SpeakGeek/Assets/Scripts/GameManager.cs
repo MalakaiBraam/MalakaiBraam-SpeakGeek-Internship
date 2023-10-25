@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     public Vector3 MostRecentCheck;
     [SerializeField] TextMeshProUGUI timerText;
-    float elapsedTime;
+    public static float elapsedTime;
 
     private void Awake()
     {
