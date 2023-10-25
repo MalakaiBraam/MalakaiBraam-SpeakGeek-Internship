@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public static string input;
+    private string input;
 
     public void LoadGame()
     {
