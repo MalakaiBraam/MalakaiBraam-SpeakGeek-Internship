@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-
+    public static string input;
 
     public void LoadGame()
     {
@@ -21,5 +21,11 @@ public class UIManager : MonoBehaviour
     public void QuiteGame()
     {
         Application.Quit();
+    }
+
+    public void ReadInput(string s)
+    {
+        input = s;
+        Debug.Log(input);
     }
 }
