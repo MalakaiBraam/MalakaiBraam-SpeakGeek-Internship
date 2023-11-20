@@ -8,9 +8,9 @@ public class PlayerController : MonoBehaviour
     private GameManager gM;
     public float speed;
     public Rigidbody rb;
-    public GameObject health1;
-    public GameObject health2;
-    public GameObject health3;
+   // public GameObject health1;
+   // public GameObject health2;
+   // public GameObject health3;
     public int health;
     public bool canJump = false;
     public float jumpForce = 5.0f;
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.back * speed);
         }
 
-        if (health == 2)
+      /*  if (health == 2)
         {
             health1.SetActive(false);
         }
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
             health3.SetActive(false);
             SceneManager.LoadScene(2);
             
-        }
+        }*/
 
         if (canJump && Input.GetKeyDown(KeyCode.Space) && (Time.time - lastJumpTime) >= jumpCooldown)
         {
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Boundary"))
+       /* if (collision.gameObject.CompareTag("Boundary"))
         {
             transform.position = gM.MostRecentCheck;
 
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
                 health = health - 1;
             }
             
-        }
+        }*/
 
 
     }
